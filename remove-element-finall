@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+	int *nums[7];
+	int a[] = {3, 3, 2, 3, 5, 3, 5};
+	int numSize = 7, val = 3, num = 0;
+	int left = 0, right;
+	for(right = 0; right<numSize; right++)
+	{
+		nums[right] = &a[right];
+	}
+	for(right = 0; right<numSize; right++)
+	{
+		if(*nums[right] != val)
+		{
+			nums[left] = nums[right];
+			left++;
+			num++;
+		}
+	}
+	for(left = 0; left<num; left++)
+		printf("%d", *nums[left]);
+	return 0;
+ } 
